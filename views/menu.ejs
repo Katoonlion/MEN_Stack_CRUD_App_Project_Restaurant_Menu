@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <%- include('partials/head') %>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+
+    <%- include('./partials/nav') %>
+
+    <main class="page">
+        <h1 class="page-title">Full Menu</h1>
+        <% categoryMenu.forEach(category => { %>
+            <% if (groupedMenu[category]) { %>        
+                <section class="menu-section">
+                    <h2 class="menu-section-title">
+                        <%= category.charAt(0).toUpperCase() + category.slice(1) %>
+                    </h2>
+                    
+                    <div class="menu-grid">
+                        <% groupedMenu[category].forEach(item => { %>
+                            <article class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3 class="menu-item-name">
+                                        <a href="/menu/items/<%= item._id %>">
+                                            <%= item.name %>
+                                            <% if (item.rating === 5) { %> ⭐ <% } %>
+                                        </a>
+                                    </h3>
+
+                                    <div class="menu-item-price">$<%= item.price %></div>
+                                </div>
+                                
+                                <% if (item.details) { %>
+                                    <p class="menu-item-details"><%= item.details %></p>
+                                <% } %>
+                            </article>
+                        <% }) %>
+                    </div>
+                </section>
+            <% } %>
+        <% }) %>
+
+    </main>
+
+</body>
+</html>

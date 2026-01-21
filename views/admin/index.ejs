@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Menu</title>
+    <%- include('../partials/head') %>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/admin.css">
+
+    
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="page">
+        <div>
+            <h1 class="page-title">Full Menu Item List</h1>
+            <ul class="admin-list">
+                <% items.forEach(item => { %>
+                    <li class="admin-row">
+                        <div class="admin-left">
+                            <strong class="admin-name"><%= item.name %></strong>
+                            <span class="admin-price">$<%= item.price %></span>
+                        </div>
+
+                        <div class="admin-actions">
+                            <a class="btn btn-outline" href="/admin/menu/<%= item._id %>/edit">Edit</a>
+
+                            <form method="POST"
+                                action="/admin/menu/<%= item._id %>?_method=DELETE"
+                                onsubmit="return confirm('Delete this menu item?');">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <a class="btn btn-primary admin-add" href="/admin/menu/new">+ Add New Menu Item</a>
+
+    </main>
+
+
+
+</body>
+</html>

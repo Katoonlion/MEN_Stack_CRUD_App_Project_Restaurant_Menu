@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <a href="/">Home</a>
+  <a href="/menu">Full Menu</a>
+  <!-- new links below-->
+  <a href="/menu/starter">Starter</a>
+  <a href="/menu/soup">Soup</a>
+  <a href="/menu/grill">Grill</a>
+  <a href="/menu/main">Main</a>
+  <a href="/menu/desserts">Desserts</a>
+  <a href="/menu/drink">Drink</a>
+
+  <% if (!user) { %>
+    <!-- Not login yet-->
+    <a href="/auth/sign-up">Sign up</a>
+    <a href="/auth/sign-in">Sign in</a>
+  <% } else { %>
+    <!-- Already login -->
+    <span class="nav-user">Hi, <%= user.username %></span>
+    <a href="/auth/sign-out">Sign out</a>
+  <% } %>
+
+  <% if (user && user.role === 'admin') { %>
+  <a href="/admin/menu">Admin</a>
+<% } %>
+
+</nav>

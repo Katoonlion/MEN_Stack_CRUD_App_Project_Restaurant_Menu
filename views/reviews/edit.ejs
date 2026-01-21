@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Review</title>
+  <%- include('../partials/head') %>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <!-- <link rel="stylesheet" href="/css/admin.css"> -->
+  <link rel="stylesheet" href="/css/review.css">
+</head>
+<body>
+  
+  <%- include('../partials/nav') %>
+
+  <main class="page">
+    <h1 class="page-title">Edit Review</h1>
+    <section class="reviews-card">
+
+      <form class="review-form" method="POST" action="/reviews/<%= review._id %>?_method=PUT">
+        <div class="form-row">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Select</option>
+            <% for (let i = 5; i >= 1; i--) { %>
+              <option value="<%= i %>" <%= String(review.rating) === String(i) ? 'selected' : '' %>>
+                <%= i %>
+              </option>
+            <% } %>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" required><%= review.comment %></textarea>
+        </div>
+
+        <!-- <div class="form-actions"> -->
+          <button class="btn btn-primary" type="submit">Save</button>
+        <!-- </div> -->
+      </form>
+    </section>
+  </main>
+
+  <a class="back-link" href="/menu/items/<%= review.menuItem %>">← Back</a>
+
+</body>
+</html>

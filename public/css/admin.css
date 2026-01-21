@@ -1,0 +1,165 @@
+/* Admin menu list layout */
+
+.admin-list{
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem auto 0;
+    max-width: 750px;
+}
+
+.admin-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    background: #f7ecd6;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    margin: 0.8rem 0;
+
+    box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+.admin-left{
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.admin-name{
+  font-size: 1.05rem;
+}
+
+.admin-price{
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+/* actions on the right */
+.admin-actions{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.admin-actions form{
+    margin: 0; 
+}
+
+/* buttons */
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background: #c47b2a;
+    color: #fff;
+}
+
+.btn-outline{
+    background: transparent;
+    border-color: #c47b2a;
+    color: #c47b2a;
+}
+
+.btn-danger{
+    background: #b93a2f;
+    color: #fff;
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+}
+
+.admin-add{
+    display: inline-flex;
+    margin-top: 1.2rem;
+}
+
+/* --- Admin Edit Form --- */
+
+.form-card {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #f7ecd6;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form {
+    display: grid;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    }
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: #fff;
+    font-size: 1.2rem;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+}
+
+/* button save */
+
+.btn-primary {
+    width: fit-content;
+    margin: 0.5rem auto 0;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    background: #c07a1c;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+

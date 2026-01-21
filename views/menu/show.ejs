@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= item.name %></title>
+  <%- include('../partials/head') %>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/review.css">
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+
+<body>
+
+  <%- include('../partials/nav') %>
+  
+  <main class="page"> 
+    <section class="menu-detail-card">
+      <h1 class="menu-title">
+        <%= item.name %>
+        <% if (item.rating === 5) { %> ⭐ <% } %>
+      </h1>
+
+      <p class="meta"><strong>Category:</strong> <%= item.category %></p>
+      <p class="meta"><strong>Price:</strong> $<%= item.price %></p>
+      <p class="meta"><strong>Rating:</strong> <%= item.rating %>/5</p>
+
+      <h3>Details</h3>
+      <p class="menu-details"><%= item.details %></p>
+      <br>
+    </section>
+
+    <section class="reviews-card">
+      <h2>Reviews</h2>
+      <% if (!reviews || reviews.length === 0) { %>
+        <p>No reviews yet.</p>
+      <% } else { %>
+      <ul class="menu-list">
+        <% reviews.forEach(r => { %>
+        <li class="review-item">
+          <div class="review-top">
+            <strong><%= r.author?.username || 'Unknown' %></strong>
+            <span>— <%= r.rating %>/5</span>
+          </div>
+
+          <p class="review-comment"><%= r.comment %></p>
+
+          <div class="review-actions">
+            <!-- Edit form -->
+            <% if (user && user._id === String(r.author?._id)) { %>
+              <a class="btn btn-sm" href="/reviews/<%= r._id %>/edit">Edit</a>
+            <% } %>
+
+            <!-- Delete form -->
+            <% if (user && (user._id === String(r.author?._id) || user.role === 'admin')) { %>
+              <form method="POST" 
+                action="/reviews/<%= r._id %>?_method=DELETE" 
+                style="display:inline;"
+                onsubmit="return confirm('Are you sure to delete this review?');">
+                <button class="btn-danger btn-sm" type="submit">Delete</button>
+              </form>
+            <% } %>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <hr class="divider" />
+
+  <% if (user && user.role === 'user') { %>
+    <h3>Add a review</h3>
+
+    <form class="review-form" method="POST" action="/reviews/menu/<%= item._id %>">
+      <div class="form-row">
+        <label>Rating</label>
+        <select name="rating" required>
+          <option value="">Select</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+      </div>
+
+      
+      <div class="form-row">
+        <label>Comment</label>
+        <textarea name="comment" required></textarea>
+      </div>
+
+      
+      <button class="btn btn-sm" type="submit">Submit</button>
+    </form>
+
+  <% } else if (!user) { %>
+    <p><a href="/auth/sign-in">Sign in</a> to add a review.</p>
+  <% } %>
+  </main>
+
+  <a class="back-link" href="/menu">← Back to Full Menu</a>
+
+</section>
+
+</body>
+</html>
+
