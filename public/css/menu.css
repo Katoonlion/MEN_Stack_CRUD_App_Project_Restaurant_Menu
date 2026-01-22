@@ -37,10 +37,13 @@
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 2rem;
     justify-content: center;
+    /* align-items: start; */
 }
 
 .menu-card {
     width: clamp(240px, 28vw, 260px);
+    /* width: 100%;
+    max-width: 320px; */
     background: rgba(231, 222, 190, 0.9);
     border-radius: 14px;
     padding: 1rem;
@@ -79,9 +82,35 @@
 }
 
 .menu-item-details {
-  margin: 0.25rem 0 0;
-  color: #374151;
-  line-height: 1.4;
+    margin: 0.25rem 0 0;
+    color: #374151;
+    line-height: 1.4;
 }
 
 
+/* ===== FORCE mobile navbar scroll (HOME) ===== */
+@media (max-width: 768px) {
+
+  /* All menu on center */
+  .menu-page,
+  .menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* card เมนู = card กลางจอ */
+  .menu-card {
+    width: 100%;
+    max-width: 340px;   
+    margin: 0 auto;
+  }
+}

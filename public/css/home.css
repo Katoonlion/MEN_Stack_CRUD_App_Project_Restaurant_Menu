@@ -42,7 +42,7 @@
   max-width: 1200px;   
   min-height: 420px;   
   margin: 0 auto;
-  padding: 3rem 3.5rem;
+  /* padding: 3rem 3.5rem; */
   background: #f6ead5;
   border-radius: 30px;
   /* padding: clamp(1.25rem, 3vw, 2.25rem); */
@@ -120,7 +120,7 @@
 }
 
 /* Responsive */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .hero-card{
     grid-template-columns: 1fr;
     text-align: center;
@@ -128,6 +128,30 @@
   .hero-actions{
     justify-content: center;
   }
+
+/* ===== FORCE mobile navbar scroll (HOME) ===== */
+
+  /* .navbar{
+    display: flex;
+    flex-wrap: nowrap !important;
+    gap: 14px;
+
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 10px 12px;
+  }
+
+  .navbar::-webkit-scrollbar{
+    display: none;
+  }
+
+  .navbar a,
+  .navbar .nav-user{
+    flex: 0 0 auto;
+  } */
 }
 
 
