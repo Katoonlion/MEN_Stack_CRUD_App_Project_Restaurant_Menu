@@ -11,8 +11,7 @@ Restaurant Menu App is a full-stack MEN (MongoDB, Express, Node.js) application 
 This project was built as part of a MEN Stack CRUD application assignment. The goal was to practice building a full-stack application with authentication, authorization, and relational data while following RESTful conventions.
 
 ## Getting Started 
-### Deployed App : 
-    https://ga-project-restaurant-menu-app-2755eaec9bbb.herokuapp.com/
+### Deployed App : https://ga-project-restaurant-menu-app-2755eaec9bbb.herokuapp.com
     
 ### Planning Materials
 - **ERD :** https://dbdiagram.io/d/695c183239fa3db27b2b1272
