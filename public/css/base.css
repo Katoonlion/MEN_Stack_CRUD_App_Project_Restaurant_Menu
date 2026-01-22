@@ -76,33 +76,42 @@ body {
 }
 
 /* ===== Mobile: make nav horizontally scrollable ===== */
-/* ===== Mobile: make nav horizontally scrollable ===== */
 @media (max-width: 768px){
   .navbar{
-    justify-content: flex-start;   
-    gap: 14px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
 
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 
-    padding: 0.75rem 0.75rem;      
-    flex-wrap: nowrap;             
-  }
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
-  .navbar::-webkit-scrollbar{
-    display: none;
+    gap: 14px;
+
+    scroll-padding-right: 24px;
   }
 
   .navbar a,
   .navbar .nav-user{
-    flex: 0 0 auto;                
+    flex: 0 0 auto;
   }
 
   .navbar a{
     font-size: 0.95rem;
-    padding: 8px 10px;
+    padding: 6px 10px;
   }
+
+  .navbar::after{
+    content: "";
+    flex: 0 0 30px;  
+  }
+
+  .navbar::-webkit-scrollbar{ display:none; }
+
 }
+
+
 
