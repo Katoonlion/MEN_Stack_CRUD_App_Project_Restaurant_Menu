@@ -18,7 +18,7 @@ const authController = require('./controllers/auth.js');
 // server.js
 // const applicationsController = require('./controllers/applications.js');
 
-const port = process.env.PORT ? process.env.PORT : '3000';
+const port = process.env.PORT || 3000;
 // Let's connect to MongoDB using the
 // connection string from the .env file
 mongoose.connect(process.env.MONGODB_URI);
