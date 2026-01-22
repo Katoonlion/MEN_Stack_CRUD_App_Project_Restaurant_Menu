@@ -86,14 +86,16 @@ body {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 
+    padding: 0.5rem 0.75rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 
     gap: 14px;
 
-    scroll-padding-right: 24px;
   }
 
+  .navbar::-webkit-scrollbar{ display:none; }
+  
   .navbar a,
   .navbar .nav-user{
     flex: 0 0 auto;
@@ -106,10 +108,10 @@ body {
 
   .navbar::after{
     content: "";
-    flex: 0 0 30px;  
+    flex: 0 0 40px;  
   }
 
-  .navbar::-webkit-scrollbar{ display:none; }
+
 
 }
 
