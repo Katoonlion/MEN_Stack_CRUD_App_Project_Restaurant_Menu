@@ -46,7 +46,6 @@ This project was built as part of a MEN Stack CRUD application assignment. The g
 - Menu item images upload
 - Average rating calculation
 - Search and filter menu items
-- Improved mobile responsiveness
 
 </small>
 
