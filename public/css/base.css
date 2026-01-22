@@ -76,12 +76,19 @@ body {
 }
 
 /* ===== Mobile: make nav horizontally scrollable ===== */
-@media (max-width: 480px){
+/* ===== Mobile: make nav horizontally scrollable ===== */
+@media (max-width: 768px){
   .navbar{
+    justify-content: flex-start;   
+    gap: 14px;
+
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+
+    padding: 0.75rem 0.75rem;      
+    flex-wrap: nowrap;             
   }
 
   .navbar::-webkit-scrollbar{
@@ -90,7 +97,7 @@ body {
 
   .navbar a,
   .navbar .nav-user{
-    flex: 0 0 auto; 
+    flex: 0 0 auto;                
   }
 
   .navbar a{
@@ -98,3 +105,4 @@ body {
     padding: 8px 10px;
   }
 }
+

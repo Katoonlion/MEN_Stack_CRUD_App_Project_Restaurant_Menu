@@ -128,30 +128,7 @@
   .hero-actions{
     justify-content: center;
   }
-
-/* ===== FORCE mobile navbar scroll (HOME) ===== */
-
-  /* .navbar{
-    display: flex;
-    flex-wrap: nowrap !important;
-    gap: 14px;
-
-    overflow-x: auto !important;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-
-    padding: 10px 12px;
-  }
-
-  .navbar::-webkit-scrollbar{
-    display: none;
-  }
-
-  .navbar a,
-  .navbar .nav-user{
-    flex: 0 0 auto;
-  } */
+  
 }
 
 
