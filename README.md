@@ -1,9 +1,8 @@
-## Restaurant Menu
+## Restaurant Menu App
 
 ![Home Page](https://img2.pic.in.th/Restaurant_Menu_Home_Page.jpg)
 
 <small>
-Restaurant Menu App
 
 ## Description 
 Restaurant Menu App is a full-stack MEN (MongoDB, Express, Node.js) application that allows restaurant owners to manage menu items and customers to view menus and leave reviews. Admins can create, edit, and delete menu items, while customers can write, edit, and delete their own reviews. The app uses session-based authentication and role-based authorization to protect user data.
